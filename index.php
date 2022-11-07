@@ -1,18 +1,15 @@
 <?php 
     include "includes/header.php";
     include "includes/preloader.php";
+    include "includes/navbar.php";
+    include "includes/sidebar.php";
 ?>
-
-<!-- Navbar -->
-<?php include "includes/navbar.php";?>
-<!-- /.navbar -->
-
-<!-- Sidebar -->
-<?php include "includes/sidebar.php";?>
 
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -108,12 +105,11 @@
 
   </section>
   <!-- /.content -->
+
 </div>
 <!-- /.content-wrapper -->
 
 
-<!-- Main Footer -->
+<!--Footer -->
 <?php include "includes/footer.php";?>
 
-<!-- Script Files -->
-<?php include "includes/scripts.php";?>

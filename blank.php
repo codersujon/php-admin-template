@@ -1,18 +1,15 @@
-<?php 
-    include "includes/header.php";
-    include "includes/preloader.php";
+<?php
+  require "includes/header.php";
+  require "includes/preloader.php";
+  require "includes/navbar.php";
+  require "includes/sidebar.php";
 ?>
-
-<!-- Navbar -->
-<?php include "includes/navbar.php";?>
-<!-- /.navbar -->
-
-<!-- Sidebar -->
-<?php include "includes/sidebar.php";?>
 
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -34,23 +31,23 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-
       <!-- Main row -->
       <div class="row">
         <div class="col-12">
-              <h1 class="display-1 text-light text-center">Softness IT</h1>
+          <h1 class="display-1 text-light text-center">DEMO PAGE</h1>
         </div>
       </div>
       <!-- /.row -->
-
+    </div>
   </section>
   <!-- /.content -->
+
 </div>
 <!-- /.content-wrapper -->
 
 
-<!-- Main Footer -->
-<?php include "includes/footer.php";?>
-
-<!-- Script Files -->
-<?php include "includes/scripts.php";?>
+<!--Footer -->
+<?php 
+    require("includes/copyright.php");
+    require("includes/footer.php"); 
+?>
