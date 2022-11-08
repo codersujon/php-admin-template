@@ -5,14 +5,33 @@
   <div class="register-box">
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>Sign</b>Up</a>
+        <a href="../../index2.html" class="h1"><b>Sign</b> Up</a>
       </div>
       <div class="card-body">
+        <?php 
+
+            require("classes/Branch.php");
+            $branch = new Branch;
+
+            if(isset($_POST["register"])){
+              echo $branch->addBranch($_POST);
+            }
+
+        ?>
+
         <p class="login-box-msg">Register a new membership</p>
 
-        <form action="../../index.html" method="post">
+        <form action="" method="POST">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Full name">
+            <input type="text" class="form-control" name="bName" placeholder="Branch Name">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-home"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="mName" placeholder="Manager Name">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -20,7 +39,15 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="number" class="form-control" name="phone" placeholder="Phone">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-phone"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -28,7 +55,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" name="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -36,7 +63,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Retype password">
+            <input type="password" class="form-control" placeholder="Retype password" name="rpassword">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -54,13 +81,13 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Register</button>
+              <button type="submit" name="register" class="btn btn-primary btn-block">Register</button>
             </div>
             <!-- /.col -->
           </div>
         </form>
 
-        <a href="login.php" class="text-center">I already have a membership</a>
+        <a href="index.php" class="text-center">I already have a membership</a>
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->
