@@ -14,7 +14,15 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="" class="d-block">
+            
+            <?php 
+                FIXME:
+                if(isset($_SESSION['bName'])){
+                  echo $_SESSION['bName'];
+                }
+            ?>
+          </a>
         </div>
       </div>
 
@@ -35,7 +43,13 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">Admin Panel</li>
+          <li class="nav-header">Controls Area</li>
+          <li class="nav-item">
+                <a href="usercontrols.php" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>User List</p>
+                </a>
+              </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -59,6 +73,12 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+              <a href="logout.php" class="nav-link">
+                <i class="nav-icon fas fa-power-off"></i>
+                <p>Logout</p>
+              </a>
           </li>
         </ul>
       </nav>

@@ -1,21 +1,9 @@
 <?php 
-     class db{
-        public $hostname;
-        public $username;
-        public $password;
-        public $dbname;
+    class DB{
+        public $con ="";
 
-        public function __construct($hostname, $username, $password, $dbname){
-            $this->hostname = $hostname;
-            $this->username = $username;
-            $this->password = $password;
-            $this->dbname = $dbname;
-
-            $con = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
-
-            if (!$con) {
-                echo "Database Not Connected".mysqli_error($con);
-            }
+        public function __construct(){
+           $connection = $this->con = new mysqli("localhost","root", "root", "pos_template");
         }
     }
 ?>

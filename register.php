@@ -5,20 +5,17 @@
   <div class="register-box">
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>Sign</b> Up</a>
+        <a href="register.php" class="h1"><b>Sign</b> Up</a>
       </div>
       <div class="card-body">
         <?php 
-
-            require("classes/Branch.php");
-            $branch = new Branch;
+            include "classes/Branch.php";
+            $branchRegister = new Branch;
 
             if(isset($_POST["register"])){
-              echo $branch->addBranch($_POST);
+              echo $branchRegister->addBranch($_POST);
             }
-
         ?>
-
         <p class="login-box-msg">Register a new membership</p>
 
         <form action="" method="POST">
