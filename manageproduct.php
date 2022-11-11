@@ -1,8 +1,8 @@
 <?php
-  require "includes/header.php";
-  require "includes/preloader.php";
-  require "includes/navbar.php";
-  require "includes/sidebar.php";
+    require "includes/header.php";
+    require "includes/preloader.php";
+    require "includes/navbar.php";
+    require "includes/sidebar.php";
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -33,7 +33,7 @@
       <!-- Main row -->
       <div class="row">
         <div class="col-12">
-          <h1 class="display-1 text-light text-center">Manage Product</h1>
+          
         </div>
       </div>
       <!-- /.row -->
