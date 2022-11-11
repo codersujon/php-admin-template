@@ -2,7 +2,14 @@
 
 <?php 
     // Class Extends with DB Connection
-    class Branch extends DB{
+    class Branch{
+        private $con ="";
+        // Constructor  
+        function __construct(){
+            $obj= new Connection;
+            $this->con=$obj->connect();
+        }
+
         //Registration Function
         function addBranch($regData){
             $bName =  $regData['bName']; 
@@ -17,7 +24,7 @@
                             <strong>Error:</strong> Password Not Match!
                         </div>';
             }else{
-                
+                $password = md5($password);
                 $sql = $this->con->query("INSERT INTO `tbl_branch`(`bName`, `mName`, `phone`, `email`, `password`, `status`) VALUES ('$bName','$mName','$phone','$email','$password','0')");
 
                 if ($sql) {
@@ -34,10 +41,10 @@
 
         //Login Function
         function login($loginData){
-            $email=$loginData["email"];
-            $password=$loginData["password"];
+            $mep        =$loginData["mep"];
+            $password   =md5($loginData["password"]);
 
-            if ( $email == "" ) {
+            if ( $mep == "" ) {
                 return '<div class="alert alert-danger text-center">
                             <strong>Error:</strong> Email is Empty!
                         </div>';
@@ -46,8 +53,22 @@
                             <strong>Error:</strong> Password is Empty!
                         </div>';
             } else {
-               
-                
+
+               $sql = $this->con->query("SELECT * FROM `tbl_branch` WHERE (`mName`='$mep' OR `email`='$mep' OR `phone`='$mep') AND `password`='$password' AND `status`='1'");
+
+                if ($sql->num_rows>0) {
+                    $sql=$sql->fetch_assoc();
+                    // Session Using to Store the session values
+                    $_SESSION['id'] = $sql['id'];
+                    $_SESSION['bName'] = $sql['bName'];
+                    $_SESSION['mName'] = $sql['mName'];
+                    header("Location:dashboard.php");
+
+                } else {
+                    return '<div class="alert alert-danger text-center">
+                            <strong>Error:</strong> Manager Name or Email or Phone and Password not found!
+                        </div>';
+                }
               
                
             }

@@ -11,6 +11,7 @@
         <a href="" class="h1"><b>Member</b> Login</a>
       </div>
       <div class="card-body">
+
         <?php 
           include "classes/Branch.php";
           $login = new Branch;
@@ -18,13 +19,13 @@
           if(isset($_POST["login"])){
             echo $login->login($_POST);
           }
-        
         ?>
+        
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="" method="POST">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Manager Name or Email or Phone" name="email">
+            <input type="text" class="form-control" placeholder="Manager Name or Email or Phone" name="mep">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

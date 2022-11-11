@@ -15,13 +15,14 @@
         </div>
         <div class="info">
           <a href="" class="d-block">
-            
+
+            <!-- Manager Name Showing  -->
             <?php 
-                FIXME:
                 if(isset($_SESSION['bName'])){
-                  echo $_SESSION['bName'];
+                  echo $_SESSION['mName'];
                 }
             ?>
+            
           </a>
         </div>
       </div>
