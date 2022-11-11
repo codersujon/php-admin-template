@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+    $admin = $_SESSION['mName'];
+    if($admin != "admin"){
+        header("Location: index.php");
+    }
+?>
+
 <?php
 require "includes/header.php";
 require "includes/preloader.php";
@@ -97,7 +105,7 @@ require "includes/sidebar.php";
                                         <td><?= $row['phone']; ?></td>
                                         <td><?= $status; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm">
+                                            <a href="branchedit.php?id=<?php echo $row['id'];?>" class="btn btn-info btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <button class="btn btn-danger btn-sm" data-target="#deleteModal" data-toggle="modal">

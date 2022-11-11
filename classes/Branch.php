@@ -89,11 +89,36 @@
             $sql = $this->con->query("UPDATE `tbl_branch` SET `status`='1' WHERE `id`='$id';");
             echo '<script>window.location.replace("usercontrols.php")</script>';
         }
+
+        // Edit Branch
+        function editBranch($id){
+            $sql = $this->con->query("SELECT * FROM `tbl_branch` WHERE id='$id'");
+            return $sql;
+        }
+
+        // Update Branch
+        function updateBranch($upData, $id){
+            $bName = $upData['bName'];
+            $mName = $upData['mName'];
+            $phone = $upData['phone'];
+            $email = $upData['email'];
+            $password = md5($_POST['password']);
+            $sql = $this->con->query("UPDATE `tbl_branch` SET `bName`='$bName', `mName`='$mName', `phone`='$phone', `email`='$email', `password`='$password' WHERE `id`='$id'");
+            if($sql){
+                echo '<div class="alert alert-success text-center">
+                            <strong>Success:</strong> Information Update Successfully!
+                        </div>';
+            }
+            echo '<script>window.location.replace("usercontrols.php")</script>';
+        }
+
         //Delete Branch
         function deleteBranch($id){
             $sql = $this->con->query("DELETE FROM `tbl_branch` WHERE id='$id'");
             echo "<script>window.location.replace('usercontrols.php')</script>";
         }
+
+
 
     }
 ?>
