@@ -117,8 +117,5 @@
             $sql = $this->con->query("DELETE FROM `tbl_branch` WHERE id='$id'");
             echo "<script>window.location.replace('usercontrols.php')</script>";
         }
-
-
-
     }
 ?>

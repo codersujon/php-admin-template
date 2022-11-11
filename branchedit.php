@@ -1,8 +1,8 @@
 <?php
-  require "includes/header.php";
-  require "includes/preloader.php";
-  require "includes/navbar.php";
-  require "includes/sidebar.php";
+require "includes/header.php";
+require "includes/preloader.php";
+require "includes/navbar.php";
+require "includes/sidebar.php";
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -33,72 +33,72 @@
       <!-- Main row -->
       <div class="row">
         <div class="col-4 offset-sm-4">
-         <div class="card card-outline card-info">
-          <div class="updateBranch card-body">
-                <?php 
-                    include("classes/Branch.php");
-                    $branch = new Branch;
-                    $id = $_GET['id'];
-                    $data_obj = $branch->editBranch($id); // Here we got data as a object;
-                    $row = $data_obj->fetch_assoc(); // object convert to associative array
+          <div class="card card-outline card-info">
+            <div class="updateBranch card-body">
+              <?php
+              include("classes/Branch.php");
+              $branch = new Branch;
+              $id = $_GET['id'];
+              $data_obj = $branch->editBranch($id); // Here we got data as a object;
+              $row = $data_obj->fetch_assoc(); // object convert to associative array
 
-                    // Update Branch
-                    if(isset($_POST['update'])){
-                      $branch->updateBranch($_POST, $id);
-                    }
+              // Update Branch
+              if (isset($_POST['update'])) {
+                $branch->updateBranch($_POST, $id);
+              }
 
-                ?>
+              ?>
 
 
-                <form action="" method="POST">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="bName" placeholder="Branch Name" value="<?= $row['bName'];?>">
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-home"></span>
-                      </div>
+              <form action="" method="POST">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" name="bName" placeholder="Branch Name" value="<?= $row['bName']; ?>">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-home"></span>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="mName" placeholder="Manager Name" value="<?= $row['mName'];?>">
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-user"></span>
-                      </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" name="mName" placeholder="Manager Name" value="<?= $row['mName']; ?>">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-user"></span>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="number" class="form-control" name="phone" placeholder="Phone" value="<?= $row['phone'];?>">
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-phone"></span>
-                      </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="number" class="form-control" name="phone" placeholder="Phone" value="<?= $row['phone']; ?>">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-phone"></span>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email" name="email" value="<?= $row['email'];?>">
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                      </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Email" name="email" value="<?= $row['email']; ?>">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-envelope"></span>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password" value="<?= $row['password'];?>">
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                      </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" class="form-control" placeholder="Password" name="password" value="<?= $row['password']; ?>">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-lock"></span>
                     </div>
                   </div>
-                  <div class="row">
-                    <!-- /.col -->
-                    <div class="col-4">
-                      <button type="submit" name="update" class="btn btn-info btn-block">Update</button>
-                    </div>
-                    <!-- /.col -->
+                </div>
+                <div class="row">
+                  <!-- /.col -->
+                  <div class="col-4">
+                    <button type="submit" name="update" class="btn btn-info btn-block">Update</button>
                   </div>
-                </form>
+                  <!-- /.col -->
+                </div>
+              </form>
             </div>
           </div>
         </div>
