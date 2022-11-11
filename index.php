@@ -1,5 +1,10 @@
 <?php include "includes/header.php";?>
 
+<?php 
+    if(isset($_SESSION['bName'])){
+      header("Location: dashboard.php");
+    }
+?>
 
 <!-- Login Page -->
 <div class="hold-transition login-page dark-mode">
@@ -14,10 +19,10 @@
 
         <?php 
           include "classes/Branch.php";
-          $login = new Branch;
+          $branch = new Branch;
           
           if(isset($_POST["login"])){
-            echo $login->login($_POST);
+            echo $branch->login($_POST);
           }
         ?>
         

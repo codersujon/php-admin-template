@@ -4,7 +4,7 @@
     // Class Extends with DB Connection
     class Branch{
         private $con ="";
-        // Constructor  
+        // Constructor  for Connection
         function __construct(){
             $obj= new Connection;
             $this->con=$obj->connect();
@@ -64,14 +64,35 @@
                     $_SESSION['mName'] = $sql['mName'];
                     header("Location:dashboard.php");
 
-                } else {
+                } else{
                     return '<div class="alert alert-danger text-center">
-                            <strong>Error:</strong> Manager Name or Email or Phone and Password not found!
-                        </div>';
+                                <strong>Error:</strong> Manager Name or Email or Phone and Password not found!
+                            </div>';
                 }
-              
-               
             }
+        }
+
+        // Branch User List Show
+        function branchUserList(){
+            $sql = $this->con->query("SELECT * FROM `tbl_branch`;");
+            return $sql;
+        }
+
+        // Active Branch
+        function activeBranch($id){
+            $sql = $this->con->query("UPDATE `tbl_branch` SET `status`='0' WHERE `id`='$id';");
+            echo '<script>window.location.replace("usercontrols.php")</script>';
+        }
+
+        // Inactive Branch
+        function inActiveBranch($id){
+            $sql = $this->con->query("UPDATE `tbl_branch` SET `status`='1' WHERE `id`='$id';");
+            echo '<script>window.location.replace("usercontrols.php")</script>';
+        }
+        //Delete Branch
+        function deleteBranch($id){
+            $sql = $this->con->query("DELETE FROM `tbl_branch` WHERE id='$id'");
+            echo "<script>window.location.replace('usercontrols.php')</script>";
         }
 
     }

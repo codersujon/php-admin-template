@@ -5,7 +5,6 @@
   require "includes/sidebar.php";
 ?>
 
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -51,5 +50,3 @@
     require("includes/copyright.php");
     require("includes/footer.php"); 
 ?>
-
-

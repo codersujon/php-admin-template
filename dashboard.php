@@ -1,9 +1,17 @@
 <?php 
+    session_start();
+    if(!isset($_SESSION['bName'])){
+      header("Location: index.php");
+    }
+?>
+
+<?php 
     include "includes/header.php";
     include "includes/preloader.php";
     include "includes/navbar.php";
     include "includes/sidebar.php";
 ?>
+
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

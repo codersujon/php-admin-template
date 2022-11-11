@@ -10,10 +10,10 @@
       <div class="card-body">
         <?php 
             include "classes/Branch.php";
-            $branchRegister = new Branch;
+            $branch = new Branch;
 
             if(isset($_POST["register"])){
-              echo $branchRegister->addBranch($_POST);
+              echo $branch->addBranch($_POST);
             }
         ?>
         <p class="login-box-msg">Register a new membership</p>
