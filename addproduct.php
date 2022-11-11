@@ -8,7 +8,6 @@ require "includes/sidebar.php";
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -34,12 +33,12 @@ require "includes/sidebar.php";
       <div class="row">
         <div class="col-6 offset-sm-3">
           <!-- Add Product -->
+          
           <div class="addProduct">
             <form action="" method="POST">
               <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Add New Product</h3>
-
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                       <i class="fas fa-minus"></i>
@@ -47,6 +46,14 @@ require "includes/sidebar.php";
                   </div>
                 </div>
                 <div class="card-body">
+                <?php 
+                  include("classes/Product.php");
+                  $newProduct = new Product;
+
+                  if(isset($_POST['add'])){
+                    echo $newProduct->addNewProduct($_POST);
+                  }
+                ?>
                   <div class="form-row">
                     <div class="col">
                       <label for="pname">Product Name</label>
@@ -55,7 +62,6 @@ require "includes/sidebar.php";
                     <div class="col">
                       <label for="psize">Product Size</label>
                       <input type="number" id="psize" class="form-control" placeholder="Enter Product Size" name="psize">
-
                     </div>
                   </div>
                   <div class="form-group">
@@ -85,7 +91,7 @@ require "includes/sidebar.php";
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary" name="addProduct">Add Product</button>
+                  <button type="submit" class="btn btn-primary" name="add">Add Product</button>
                 </div>
               </div>
             </form>

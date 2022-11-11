@@ -81,9 +81,8 @@ require "includes/sidebar.php";
                                     }
 
                                     if ($obj->num_rows > 0) {
-
+                                        $sl = 1;
                                         while ($row = $obj->fetch_assoc()) {
-                                            $sl = 1;
                                             if ($row['status'] == 1) {
                                                 $status = '<a href="usercontrols.php?active=' . $row['id'] . '" name="active" class="btn btn-sm btn-success">
                                                                     <i class="fas fa-user-check"></i> Active
