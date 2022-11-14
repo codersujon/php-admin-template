@@ -37,7 +37,7 @@
           
           <div class="updateProduct">
             <form method="POST">
-              <div class="card card-primary">
+              <div class="card card-info">
                 <div class="card-header">
                   <h3 class="card-title">Product Edit</h3>
                   <div class="card-tools">
@@ -102,7 +102,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary" name="update">Update Product</button>
+                  <button type="submit" class="btn btn-info" name="update">Update Product</button>
                 </div>
               </div>
             </form>

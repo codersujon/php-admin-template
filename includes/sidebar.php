@@ -76,6 +76,30 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shopping-cart nav-icon"></i>
+              <p>
+                Purchase
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="purchase.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Purchase</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="managepurchase.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Purchase</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
               <a href="logout.php" class="nav-link">
                 <i class="nav-icon fas fa-power-off"></i>
                 <p>Logout</p>

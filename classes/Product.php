@@ -1,4 +1,4 @@
-<?php include "config/config.php";?>
+<?php include("config.php");?>
 <?php 
     class Product{
 
@@ -60,7 +60,6 @@
                 echo "<script>window.location.replace('manageproduct.php')</script>";
             }
         }
-
 
         //Delete Product
         function deleteProduct($id){

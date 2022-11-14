@@ -1,5 +1,4 @@
-<?php include "config/config.php";?>
-
+<?php include("config.php");?>
 <?php 
     // Class Extends with DB Connection
     class Branch{
@@ -59,7 +58,7 @@
                 if ($sql->num_rows>0) {
                     $sql=$sql->fetch_assoc();
                     // Session Using to Store the session values
-                    $_SESSION['id'] = $sql['id'];
+                    $_SESSION['branch_id'] = $sql['id'];
                     $_SESSION['bName'] = $sql['bName'];
                     $_SESSION['mName'] = $sql['mName'];
                     header("Location:dashboard.php");

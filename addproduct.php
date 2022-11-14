@@ -39,7 +39,7 @@ require "includes/sidebar.php";
               <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Add New Product</h3>
-                  <a href="manageproduct.php" class="btn btn-dark btn-sm  ml-3"><i class="fas fa-eye"></i> View Product</a>
+                  <a href="manageproduct.php" class="btn btn-dark btn-sm  ml-3"><i class="fas fa-eye"></i></a>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                       <i class="fas fa-minus"></i>

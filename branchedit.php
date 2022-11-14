@@ -49,7 +49,6 @@ require "includes/sidebar.php";
 
               ?>
 
-
               <form action="" method="POST">
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="bName" placeholder="Branch Name" value="<?= $row['bName']; ?>">
