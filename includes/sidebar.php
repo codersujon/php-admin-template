@@ -100,6 +100,30 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shopping-cart nav-icon"></i>
+              <p>
+                Sales
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="sales.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Sale</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="managesales.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Sales</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
               <a href="logout.php" class="nav-link">
                 <i class="nav-icon fas fa-power-off"></i>
                 <p>Logout</p>
