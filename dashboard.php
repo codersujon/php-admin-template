@@ -102,7 +102,14 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Total Purchase</span>
-              <span class="info-box-number">103</span>
+              <span class="info-box-number">
+              <?php 
+                  $obj = new Dashboard;
+                  $sql = $obj->totalStock();
+                  $result = $sql->fetch_assoc();    
+                  echo $result['totalStock'];           
+               ?>
+              </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -127,5 +134,7 @@
 <!-- /.content-wrapper -->
 
 <!--Footer -->
-<?php include "includes/footer.php";?>
-
+<?php
+  require("includes/copyright.php");
+  require("includes/footer.php");
+?>
