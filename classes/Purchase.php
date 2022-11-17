@@ -5,6 +5,7 @@ class Purchase
 {
     public $con = "";
     // Constructor  for Connection
+
     function __construct()
     {
         $obj = new Connection;

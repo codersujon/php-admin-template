@@ -1,4 +1,3 @@
-
 <?php 
 
     include "./Purchase.php";
@@ -93,7 +92,6 @@
         }
         echo $totalPrice;
     }
-
 
     // Purchase Summery
     function purchaseSummery(){ 

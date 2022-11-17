@@ -129,7 +129,7 @@ require "includes/sidebar.php";
                         <?php }
                     } else{
                         echo '<tr>
-                                  <td class="text-center" colspan="7"><strong>Product</strong> List is Empty!</td>
+                                  <td class="text-center" colspan="8"><strong>Product</strong> List is Empty!</td>
                               </tr>';
                     }
                   

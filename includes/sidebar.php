@@ -55,7 +55,7 @@
             <a href="#" class="nav-link">
               <i class="fas fa-store nav-icon"></i>
               <p>
-                Product
+                Products
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">2</span>
               </p>

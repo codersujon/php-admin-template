@@ -15,12 +15,14 @@
             if(isset($_POST["register"])){
               echo $branch->addBranch($_POST);
             }
+            
         ?>
+
         <p class="login-box-msg">Register a new membership</p>
 
         <form action="" method="POST">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="bName" placeholder="Branch Name">
+            <input type="text" class="form-control" name="bName" placeholder="Branch Name" value="<?php if(isset($bName)){echo $bName;}?>">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-home"></span>
@@ -28,7 +30,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="mName" placeholder="Manager Name">
+            <input type="text" class="form-control" name="mName" placeholder="Manager Name" value="<?php if(isset($mName)){echo $mName;}?>">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -36,7 +38,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="number" class="form-control" name="phone" placeholder="Phone">
+            <input type="number" class="form-control" name="phone" placeholder="Phone" value="<?php if(isset($phone)){echo $phone;}?>">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-phone"></span>
@@ -44,7 +46,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php if(isset($phone)){echo $phone;}?>">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

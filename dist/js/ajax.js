@@ -43,7 +43,7 @@ $(document).ready(function(){
         }
     });
 
-     // Find Total Stock and Show
+    // Find Total Stock and Show
      function stockShow(product_id){
         $.ajax({
             url: "././classes/ajax.php",
@@ -55,6 +55,7 @@ $(document).ready(function(){
             },
             success: function(response){
                 $("#stock").val(response.qnt);
+                $(".stock").val(response.qnt);
             }
         });
     }
@@ -233,7 +234,30 @@ $(document).ready(function(){
 
     }); 
 
+    // Find Sale Price Using Barcode
+    $(document).on('keyup', '#barcode', function(){
+        var barcode = $(this).val();
+        var action = "findItem";
 
-
+        if (barcode == "") {
+          $(".price").val("");
+        } else {
+          $.ajax({
+              url: "././classes/ajax.php",
+              type:"POST",
+              dataType: "JSON",
+              data:{
+                  "barcode": barcode,
+                  "action": action,
+              },
+              success: function(response){
+                $(".price").val(response.saleprice);
+                stockShow(response.id);
+              }
+          });
+        }
+    });
 
 });
+
+

@@ -1,11 +1,9 @@
 <?php include "includes/header.php";?>
-
 <?php 
     if(isset($_SESSION['bName'])){
       header("Location: dashboard.php");
     }
 ?>
-
 <!-- Login Page -->
 <div class="hold-transition login-page dark-mode">
 
@@ -18,12 +16,13 @@
       <div class="card-body">
 
         <?php 
-          include "classes/Branch.php";
-          $branch = new Branch;
-          
-          if(isset($_POST["login"])){
-            echo $branch->login($_POST);
-          }
+            include "classes/Branch.php";
+            $branch = new Branch;
+            
+            if(isset($_POST["login"])){
+              echo $branch->login($_POST);
+            }
+
         ?>
         
         <p class="login-box-msg">Sign in to start your session</p>
@@ -56,7 +55,7 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block" name="login">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block" name="login"><i class="fas fa-sign-in-alt"></i> Sign In</button>
             </div>
             <!-- /.col -->
           </div>
@@ -77,4 +76,4 @@
 </div>
 
 <!--Footer -->
-<?php include "includes/footer.php"; ?>
+<?php include "includes/footer.php"; ?> 

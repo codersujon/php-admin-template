@@ -1,8 +1,8 @@
 <?php
-require "includes/header.php";
-require "includes/preloader.php";
-require "includes/navbar.php";
-require "includes/sidebar.php";
+  require "includes/header.php";
+  require "includes/preloader.php";
+  require "includes/navbar.php";
+  require "includes/sidebar.php";
 ?>
 
 <!-- Content Wrapper. Contains page content -->
