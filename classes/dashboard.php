@@ -14,6 +14,13 @@
             return $sql;
         }
 
+        // Total Stock
+        function totalStock(){
+            $br_id = $_SESSION['branch_id']; 
+            $sql = $this->con->query("SELECT sum(qnt) as totalStock FROM tbl_stock WHERE br_id ='$br_id' ");
+            return $sql;
+        }
+
     }
 
 ?>
