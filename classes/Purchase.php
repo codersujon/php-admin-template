@@ -3,14 +3,13 @@
 
 class Purchase
 {
-    public $con = "";
+    private $con ="";
     // Constructor  for Connection
-
-    function __construct()
-    {
-        $obj = new Connection;
-        $this->con = $obj->connect();
+    function __construct(){
+        $obj= new Connection;
+        $this->con=$obj->connect();
     }
+
  
     // Find Product
     function findItem($barcode){

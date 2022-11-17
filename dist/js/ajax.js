@@ -258,6 +258,14 @@ $(document).ready(function(){
         }
     });
 
+
+
+    
+
+
 });
 
 
+$(document).on('keyup', '#qnt', function(){
+    alert("OK");
+});

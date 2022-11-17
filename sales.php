@@ -1,8 +1,9 @@
 <?php
-require "includes/header.php";
-require "includes/preloader.php";
-require "includes/navbar.php";
-require "includes/sidebar.php";
+    $title = "Add Sale";
+    require "includes/header.php";
+    require "includes/preloader.php";
+    require "includes/navbar.php";
+    require "includes/sidebar.php";
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -14,12 +15,12 @@ require "includes/sidebar.php";
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Add Sale</h1>
+                    <h1 class="m-0"><?= $title;?></h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                        <li class="breadcrumb-item active">Add Sale</li>
+                        <li class="breadcrumb-item active"><?= $title;?></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -49,7 +50,7 @@ require "includes/sidebar.php";
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <input type="text" class="qnt form-control" placeholder="Quantity">
+                        <input type="text" id="qnt" class="qnt form-control" placeholder="Quantity">
                     </div>
                 </div>
                 <div class="col-md-2">

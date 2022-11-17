@@ -1,4 +1,7 @@
-<?php require("includes/header.php"); ?>
+<?php 
+  $title = "Registration";
+  require("includes/header.php"); 
+?>
 
 <!-- Register Page Start-->
 <div class="hold-transition register-page dark-mode">

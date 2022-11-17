@@ -1,4 +1,5 @@
 <?php
+  $title = "Product Edit";
   require "includes/header.php";
   require "includes/preloader.php";
   require "includes/navbar.php";
@@ -14,12 +15,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Product Edit</h1>
+          <h1 class="m-0"><?= $title;?></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-            <li class="breadcrumb-item active">Product Edit</li>
+            <li class="breadcrumb-item active"><?= $title;?></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->

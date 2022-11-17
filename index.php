@@ -1,4 +1,7 @@
-<?php include "includes/header.php";?>
+<?php 
+  $title = "Sign In";
+  include "includes/header.php";
+;?>
 <?php 
     if(isset($_SESSION['bName'])){
       header("Location: dashboard.php");
