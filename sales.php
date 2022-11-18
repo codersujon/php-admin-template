@@ -37,6 +37,9 @@
                     <div class="form-group">
                         <input type="text" class="invoice form-control" placeholder="Invoice">
                     </div>
+                    <div class="form-group">
+                        <input type="hidden" class="product_id form-control">
+                    </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">

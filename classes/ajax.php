@@ -1,6 +1,7 @@
 <?php 
 
     include "./Purchase.php";
+    include "./Sales.php";
     $action = $_POST['action'];
     $action();
 
@@ -110,6 +111,33 @@
 		$purchase = new Purchase;
 		$sql = $purchase->purchaseSummery($pdate, $company, $invoice, $total_quantity,  $total_price, $dis, $dis_amount, $grand_total, $payment, $duePayment, $br_id);
     }
-	
 
+
+    // Auto Sales Invoice Generate
+    function invoiceGen(){
+        $sales = new Sales;
+        $sql = $sales->invoiceGen();
+        
+        if($sql == "Empty"){
+            echo "Empty";
+        } else{
+            echo json_encode($sql);
+        }
+    }
+
+    // Add Sales Item
+    function sAddItem(){
+        session_start();
+        $sdate = $_POST['sdate'];
+        $invoice = $_POST['invoice'];
+        $product_id =$_POST['product_id'];
+        $saleprice = $_POST['saleprice'];
+        $quantity = $_POST['quantity'];
+        $total_amount = $_POST['total_amount'];
+        $br_id = $_SESSION['branch_id'];
+        $sales = new Sales;
+        $sql =$sales->sAddItem($sdate, $invoice, $product_id, $saleprice, $quantity, $total_amount, $br_id);
+        echo $sql;
+    }
+	
 ?>

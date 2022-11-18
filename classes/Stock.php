@@ -1,3 +1,4 @@
+<?php include("config.php");?>
 <?php 
     class Stock{
         private $con ="";

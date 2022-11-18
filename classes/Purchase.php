@@ -80,6 +80,7 @@ class Purchase
         $sql = $this->con->query("SELECT * FROM `tbl_purchase_summery`");
         return $sql;
     }
+    
 }
 
 ?>

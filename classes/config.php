@@ -1,4 +1,5 @@
 <?php 
+
     class Connection{
         private $con="";
         function connect(){
@@ -6,4 +7,5 @@
            return $con; 
         }
     }
+    
 ?>

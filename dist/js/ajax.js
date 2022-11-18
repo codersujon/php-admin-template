@@ -252,20 +252,77 @@ $(document).ready(function(){
               },
               success: function(response){
                 $(".price").val(response.saleprice);
+                $(".product_id").val(response.id);
                 stockShow(response.id);
               }
           });
         }
     });
 
+    // Sales Item
+    $(document).on('keyup', '.qnt', function(){
+        var qnt = $(this).val();
+        var price = $(".price").val();
+        var total = qnt * price;
+        $(".total").val(total);
+    });
 
+    // Automatic Sales Invoice Number Generate
+    invoiceGen();
+    function invoiceGen(){
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            dataType: "JSON",
+            data:{
+                "action": "invoiceGen",
+            },
+            success: function(response){
+              if (response.invoice == null) {
+                var invoice = "2022001";
+                $(".invoice").val(invoice);
+              } else {
+                var invoice = parseInt(response.invoice) + 1;
+                $(".invoice").val(invoice);
+              }
+            }
+        });
+    }
 
-    
+    // Add Sales Item
+    $(".sAddItem").click(function(){
+        var date = new Date;
+        var d = date.getFullYear() + "-" + parseInt(date.getMonth() +1)  + "-" +  date.getDate() ;
+        var sdate = d;
+        var invoice = $(".invoice").val();
+        var product_id  = $(".product_id").val();
+        var saleprice = $(".price").val();
+        var quantity = $(".qnt").val();
+        var total_amount = $(".total").val();
+        var action = "sAddItem";
 
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            data:{
+                "sdate": sdate,
+                "invoice": invoice,
+                "product_id": product_id,
+                "saleprice": saleprice,
+                "quantity": quantity,
+                "total_amount": total_amount,
+                "action": action,
+            },
+            success: function(response){
+                alert("Added Item");
+                console.log(response);
+            }
+        });
+
+        
+
+    });
 
 });
 
 
-$(document).on('keyup', '#qnt', function(){
-    alert("OK");
-});
