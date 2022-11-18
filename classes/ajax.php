@@ -135,9 +135,37 @@
         $quantity = $_POST['quantity'];
         $total_amount = $_POST['total_amount'];
         $br_id = $_SESSION['branch_id'];
+        
         $sales = new Sales;
         $sql =$sales->sAddItem($sdate, $invoice, $product_id, $saleprice, $quantity, $total_amount, $br_id);
         echo $sql;
+    }
+
+    //Update Sales Stock
+    function updateStock(){
+        $id = $_POST['id'];
+        $qnt = $_POST['qnt'];
+        $sales = new Sales;
+        $sql = $sales->updateStock($id, $qnt);
+        echo $sql;
+    }
+
+    // Sales Items Show
+    function salesItemShow(){
+        $sales = new Sales;
+        $invoice = $_POST['invoice'];
+        $sql = $sales->salesItemShow($invoice);
+        $tabledata ="";
+        while($data = $sql->fetch_assoc()){
+            $tabledata .= '<tr>
+                     <td>'.$data['sdate'].'</td>
+                     <td>'.$data['invoice'].'</td>
+                     <td>'.$data['saleprice'].'</td>
+                     <td>'.$data['quantity'].'</td>
+                     <td>'.$data['total_amount'].'</td>
+                  </tr>';
+        }
+        echo $tabledata;
     }
 	
 ?>

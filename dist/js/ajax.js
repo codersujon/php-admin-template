@@ -63,6 +63,7 @@ $(document).ready(function(){
     // Add Purchase Item
     $(".addItem").click(function(){
         var pdate = $("#pdate").val();
+        console.log(pdate);
         var cname = $("#cname").val();
         var invoice = $("#invoice").val();
         var product_id = $("#product_id").val();
@@ -87,7 +88,7 @@ $(document).ready(function(){
                 "action": action
             },
             success:function(response){
-				if (response != "200") {
+				if (response == "200") {
                     alert("Item Added");
                     showItem();
                     calQnt();
@@ -227,6 +228,7 @@ $(document).ready(function(){
 			},
 			success:function(response){
 				alert("Successfully Saved");
+                window.location.href = "managepurchase.php";
 			}
 		});
 
@@ -292,7 +294,8 @@ $(document).ready(function(){
     // Add Sales Item
     $(".sAddItem").click(function(){
         var date = new Date;
-        var d = date.getFullYear() + "-" + parseInt(date.getMonth() +1)  + "-" +  date.getDate() ;
+        // var d =  + "-" + parseInt(date.getMonth() +1)  + "-" +  date.getDate() ;
+        var d = date.getDate() + "-" + parseInt(date.getMonth() +1)  + "-" + date.getFullYear();
         var sdate = d;
         var invoice = $(".invoice").val();
         var product_id  = $(".product_id").val();
@@ -315,13 +318,51 @@ $(document).ready(function(){
             },
             success: function(response){
                 alert("Added Item");
-                console.log(response);
+                salesItemShow();
+                updateStock(product_id);
             }
         });
 
         
 
     });
+
+    // Update Stock After Sales
+    function updateStock(id){
+        var action = "updateStock";
+        var qnt = $(".qnt").val();
+
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            data:{
+                "id": id,
+                "qnt": qnt,
+                "action":action
+            },
+            success: function(response){
+               
+            }
+        });
+    }
+
+    // Sales Items Show 
+    function salesItemShow(){
+        var invoice = $('.invoice').val();
+        var action = "salesItemShow";
+
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            data:{
+                "invoice":invoice,
+                "action":action
+            },
+            success: function(response){
+                $(".tableData").html(response);
+            }
+        });
+    }
 
 });
 

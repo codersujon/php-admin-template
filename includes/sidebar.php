@@ -3,7 +3,7 @@
    <!-- Brand Logo -->
    <a href="dashboard.php" class="brand-link">
      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-     <span class="brand-text font-weight-light">Softness IT</span>
+     <span class="brand-text font-weight-light">RuperHatBD</span>
    </a>
 
    <!-- Sidebar -->
@@ -85,7 +85,7 @@
          </li>
          <li class="nav-item">
            <a href="#" class="nav-link">
-             <i class="fas fa-shopping-cart nav-icon"></i>
+             <i class="fas fa-truck nav-icon"></i>
              <p>
                Purchase
                <i class="fas fa-angle-left right"></i>
