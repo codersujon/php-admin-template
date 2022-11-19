@@ -79,6 +79,7 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="tableData">
@@ -143,7 +144,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <button id="save" class="btn btn-success w-100" >Save & Print</button>
+                        <button class="salesSummery btn btn-success w-100" >Save & Print</button>
                     </div>
                 </div>
             </div>

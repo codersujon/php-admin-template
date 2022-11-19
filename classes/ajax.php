@@ -163,11 +163,16 @@
                      <td>'.$data['saleprice'].'</td>
                      <td>'.$data['quantity'].'</td>
                      <td>'.$data['total_amount'].'</td>
+                     <td>
+                       <button class="salesRemoveItem btn btn-danger btn-sm" value="'.$data['id'].'">
+                        <i class="fas fa-trash"></i>
+                       </button>
+                     </td>
                   </tr>';
         }
         echo $tabledata;
     }
-	
+
 
     // Calculate Total Sales Quantity
     function salesTotalQnt(){
@@ -191,5 +196,40 @@
             $totalAmnt = $totalAmnt + $data['total_amount'];
         }
         echo $totalAmnt;
+    }
+
+    // Save Sales Summery
+    function insertSalesSummery(){
+        $sdate = $_POST['sdate'];
+        $invoice = $_POST['invoice'];
+        $total_quantity = $_POST['total_quantity'];
+        $total_price = $_POST['total_price'];
+        $dis = $_POST['dis'];
+        $dis_amount = $_POST['dis_amount'];
+        $grand_total = $_POST['grand_total'];
+        $payment = $_POST['payment'];
+        $duePayment = $_POST['duePayment'];
+        session_start();
+        $br_id =  $_SESSION['branch_id'];
+        
+        $sales = new Sales;
+        $sql = $sales->insertSalesSummery($sdate, $invoice, $total_quantity, $total_price, $dis, $dis_amount, $grand_total, $payment, $duePayment, $br_id);
+        if($sql){
+            echo "OK";
+        } else{
+            echo "Wrong";
+        }
+    }
+
+    // Remove Sales Item
+    function salesRemoveItem(){
+        $id = $_POST['id'];
+		$sales = new Sales;
+		$info = $sales->salesRemoveItem($id);
+		if ($info) {
+            echo "Item Remove";
+        } else {
+            echo "Item Not Remove";
+        }
     }
 ?>

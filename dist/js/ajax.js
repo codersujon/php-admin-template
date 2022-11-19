@@ -294,7 +294,6 @@ $(document).ready(function(){
     // Add Sales Item
     $(".sAddItem").click(function(){
         var date = new Date;
-        // var d =  + "-" + parseInt(date.getMonth() +1)  + "-" +  date.getDate() ;
         var d = date.getDate() + "-" + parseInt(date.getMonth() +1)  + "-" + date.getFullYear();
         var sdate = d;
         var invoice = $(".invoice").val();
@@ -425,6 +424,62 @@ $(document).ready(function(){
         var grandTotal = $(".grandTotal").val();
         var duePayment = grandTotal - payment ;
         $(".duePayment").val(duePayment);
+    }); 
+
+    // Save Sales Summery
+    $(document).on("click", ".salesSummery", function(){
+        var date = new Date;
+        var d = date.getDate() + "-" + parseInt(date.getMonth() +1)  + "-" + date.getFullYear();
+        var sdate = d;
+
+        var invoice = $(".invoice").val();
+        var total_quantity = $("#totalQnt").val();
+        var total_price = $("#totalAmount").val();
+        var dis = $(".dis").val();
+        var dis_amount = $(".disAmount").val();
+        var grand_total = $(".grandTotal").val();
+        var payment = $(".payment").val();
+        var duePayment = $(".duePayment").val();
+        var action = "insertSalesSummery";
+
+        $.ajax({
+            url:"././classes/ajax.php",
+            type:"POST",
+            data:{ 
+                "sdate": sdate,
+                "invoice": invoice,
+                "total_quantity": total_quantity,
+                "total_price": total_price,
+                "dis": dis,
+                "dis_amount": dis_amount,
+                "grand_total": grand_total,
+                "payment": payment,
+                "duePayment": duePayment,
+                "action": action,
+            },
+            success:function(response){
+                alert("Successfully Saved");
+                window.location.href = "managepurchase.php";
+            }
+        });
+    }); 
+
+    // Sales Item Remove
+    $(document).on("click", ".salesRemoveItem", function(){
+        var id = $(this).val();
+        var action = "salesRemoveItem";
+
+        $.ajax({
+            url:"././classes/ajax.php",
+            type:"POST",
+            data:{ 
+                "id": id,
+                "action": action,
+            },
+            success:function(response){
+                alert(response);
+            }
+        });
     }); 
 
 });
