@@ -42,5 +42,12 @@
             return $sql;
         }
 
-    }
+         // Calculate Total Sales Quantity
+        function salesTotalQnt($invoice){
+            $sql = $this->con->query("SELECT * FROM `tbl_sales_details` WHERE `invoice` = '$invoice'");
+            return $sql; 
+        }
+         
+
+}
 ?>

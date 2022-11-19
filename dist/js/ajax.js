@@ -192,7 +192,7 @@ $(document).ready(function(){
     $(document).on("keyup", "#payment", function(){
         var payment = $(this).val();
         var grandTotal = $("#grandTotal").val();
-        var duePayment = payment - grandTotal;
+        var duePayment = grandTotal - payment;
         $("#duePayment").val(duePayment);
     }); 
 
@@ -319,6 +319,8 @@ $(document).ready(function(){
             success: function(response){
                 alert("Added Item");
                 salesItemShow();
+                salesTotalQnt();
+                salesTotalAmount();
                 updateStock(product_id);
             }
         });
@@ -363,6 +365,67 @@ $(document).ready(function(){
             }
         });
     }
+
+    // Calculate Total Sales Quantity
+    function salesTotalQnt(){
+        var invoice = $(".invoice").val();
+        var action = "salesTotalQnt";
+
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            dataType: "JSON",
+            data:{
+                "invoice":invoice,
+                "action":action
+            },
+            success: function(response){
+               $("#totalQnt").val(response);
+            }  
+        });
+    }
+
+    // Calculate Total Sales Amount
+    function salesTotalAmount(){
+        var invoice = $(".invoice").val();
+        var action = "salesTotalAmount";
+
+        $.ajax({
+            url: "././classes/ajax.php",
+            type:"POST",
+            dataType: "JSON",
+            data:{
+                "invoice":invoice,
+                "action":action
+            },
+            success: function(response){
+               $("#totalAmount").val(response);
+            }  
+        });
+    }
+
+    // Calculate Discount Sales Amount and Grand Total
+    $(document).on("change", ".dis", function(){
+    var dis = $(this).val();
+    var totalAmount = $("#totalAmount").val();
+
+    // Discount
+    var disAmount = ((totalAmount * dis)/ 100);
+    $(".disAmount").val(disAmount);
+
+    // Grand Total
+    var grandTotal = totalAmount - disAmount;
+    $(".grandTotal").val(grandTotal);
+
+    });
+
+    //Calculate Sales Payment and Due Payment
+    $(document).on("keyup", ".payment", function(){
+        var payment = $(this).val();
+        var grandTotal = $(".grandTotal").val();
+        var duePayment = grandTotal - payment ;
+        $(".duePayment").val(duePayment);
+    }); 
 
 });
 

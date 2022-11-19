@@ -168,4 +168,28 @@
         echo $tabledata;
     }
 	
+
+    // Calculate Total Sales Quantity
+    function salesTotalQnt(){
+        $invoice = $_POST['invoice'];
+        $sales = new Sales;
+        $sql = $sales->salesTotalQnt($invoice);
+        $totalQnt = 0;
+        while($data = $sql->fetch_assoc()){
+            $totalQnt = $totalQnt + $data['quantity'];
+        }
+        echo $totalQnt;
+    }
+
+    // Calculate Total Sales Amount
+    function salesTotalAmount(){
+        $invoice = $_POST['invoice'];
+        $sales = new Sales;
+        $sql = $sales->salesTotalQnt($invoice);
+        $totalAmnt = 0;
+        while($data = $sql->fetch_assoc()){
+            $totalAmnt = $totalAmnt + $data['total_amount'];
+        }
+        echo $totalAmnt;
+    }
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $title = "Add Sale";
+    $title = "Sales Page";
     require "includes/header.php";
     require "includes/preloader.php";
     require "includes/navbar.php";
@@ -95,12 +95,12 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" id="totalAmount" class="form-control" placeholder="Total Amount">
+                        <input type="text" id="totalAmount" class="form-control" placeholder="Total Sales Amount">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <select id="dis" class="form-control">
+                        <select class="dis form-control">
                             <option >----------Select Discount----------</option>
                             <option value="0">0%</option>
                             <option value="5">5%</option>
@@ -123,22 +123,22 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input readonly type="text" id="disAmount" class="form-control" placeholder="Dis. Amount">
+                        <input readonly type="text" class="disAmount form-control" placeholder="Dis. Amount">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" id="grandTotal" class="form-control" placeholder="Grand otal">
+                        <input type="text" class="grandTotal form-control" placeholder="Grand otal">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" id="payment" class="form-control" placeholder="Payment">
+                        <input type="text" class="payment form-control" placeholder="Payment">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" id="duePayment" class="form-control" placeholder="Due Payment">
+                        <input type="text" class="duePayment form-control" placeholder="Due Payment">
                     </div>
                 </div>
                 <div class="col-md-3">
